@@ -6,7 +6,7 @@
   var fs = require('fs');
   var out = fs.openSync('./out.log', 'a');
   var err = fs.openSync('./out.log', 'a');
-  var child = spawn('java', ['-jar', __dirname + '/target/app.jar'], {
+  var child = spawn('java', ['-jar', __dirname + '/target/vereinsbrief.jar'], {
     detached: true,
     stdio: ['ignore', out, err]
   });
