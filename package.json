@@ -1,15 +1,15 @@
 {
-  "name": "electron-starter",
-  "version": "0.1.0",
-  "description": "Electron app, starter kit.",
-  "author": "Olle Törnström",
-  "license": "MIT",
+  "name": "Vereinsbrief",
+  "version": "0.1",
+  "description": "Vereinsbrief-Ersteller - Electron app",
+  "author": "Jörg Pfründer",
+  "license": "APACHE",
   "repository": {
     "type": "git",
-    "url": "git@github.com:olle/electron-starter.git"
+    "url": "git@github.com:joerg-pfruender/vereinsbrief.git"
   },
   "bugs": {
-    "url": "https://github.com/olle/electron-starter/issues"
+    "url": "https://github.com/joerg-pfruender/vereinsbrief/issues"
   },
   "main": "main.js",
   "scripts": {

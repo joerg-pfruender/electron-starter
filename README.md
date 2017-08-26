@@ -1,17 +1,54 @@
-# Electron Starter #
+# Vereinsbrief #
 
-This starter-kit, aims to provide example setups, or templates, for
-[Electron](https://github.com/atom/electron) applications, running with
-embedded backends, of different types (not just NodeJS).
+## Zur Benutzung
 
-## Getting started ##
+Electron Applikation zur Erstellung eines Geschäftsbriefs für einen Verein
 
-Requires `make`, `mvn` and `npm`/ (Node). Simply `npm install`, to provision
-dependencies, and the `npm start`, to compile and run the starter skeleton
-application.
+Basiert auf [JAVA TM](https://www.java.com/de/), [LaTeX](https://www.latex-project.org/) und [Electron](https://github.com/atom/electron)
 
-_Proof of Concept: The current version provides the most simple Spring-Boot
-                   based JAR-application there is ("Hello World!") and simply
-                   shows how a small splash-screen/loader can transition into
-                   the Java-App. The idea is to extend this in the future, with
-                   starters for some popular development stacks. Have fun!_
+
+Vor der Installation von "Vereinsbrief" ist die Installation von Java und LaTex nötig:
+
+* [JAVA TM SE](https://java.com/de/download/)
+* [LaTeX](https://www.latex-project.org/get/)
+
+
+* [Anleitung für Windows](http://praxistipps.chip.de/latex-unter-windows-installieren-so-gehts_30111)
+* Ubuntu-Linux: `sudo apt-get install texlive-latex-base texlive-latex-extra texlive-latex-recommended xzdec`
+
+Bei Bedarf müssen evtl. noch TeX-Pakete nachinstalliert werden:
+
+
+`tlmgr init-usertree`
+ 
+`tlmgr update --all`
+
+`tlmgr install adjustbox`
+
+
+## Zur Entwicklung
+
+Basiert auf Electron.
+
+Es müssen vorhanden sein:
+* [Node.js](https://nodejs.org/en/download/current/)
+* [npm](https://www.npmjs.com/get-npm)
+* [JAVA TM SE JDK 8]()https://java.com/de/download/)
+* [Maven](https://maven.apache.org/)
+
+
+Wichtige Befehle:
+* `make`
+* `mvn package` Java bauen
+* `npm install` Electron-App bauen
+* `npm start`   Electron-App starten
+* `npm install electron-packager -g` Electron app zusammenpacken
+
+Vielen Dank an:
+
+* an [Olle Törnström](https://github.com/olle) für die Vorlage von https://github.com/olle/electron-starter
+* an Michael Lenzen für das LaTeX-Template
+* an [Benni und Jonas](http://be-jo.net/) für die gute g-brief-Vorlage
+* an die Macher von electron, LaTeX, Spring-Boot, Freemarker, Apache-Maven und alle anderen, auf denen das Projekt basiert.
+* an Gott, der uns alle geschaffen hat.
+  
