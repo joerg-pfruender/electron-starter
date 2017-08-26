@@ -71,7 +71,8 @@ Wichtige Befehle:
 * `make`
 * `npm install` Electron-App bauen
 * `npm start`   Electron-App starten
-* `npm install electron-packager -g` Electron app zusammenpacken
+* `electron-packager ./ Vereinsbrief --all` Electron apps erstellen
+* `tar -zcvf Vereinsbrief-linux-x64.tar.gz Vereinsbrief-linux-x6` tar.gz für Linux64 packen
 
 Vielen Dank an:
 
