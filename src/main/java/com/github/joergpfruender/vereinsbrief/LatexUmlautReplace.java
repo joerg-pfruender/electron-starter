@@ -29,7 +29,8 @@ public class LatexUmlautReplace {
       put("ä", "{\\\"a}");
       put("ö", "{\\\"o}");
       put("ü", "{\\\"u}");
-      put("ß", "{\\\"ss}");
+      put("ß", "{\\ss}");
+      put("\u00DF", "{\\ss}");
       put("€", "\\euro");
       put("é", "\\'e");
     }

@@ -69,7 +69,7 @@ public class App {
       }
 
       if (parameter.endsWith("Lang")) {
-        page.append(parameter + "<textarea name=\"" + parameter + "\">" + lastValue + "</textarea><br>\n");
+        page.append(parameter + "<textarea name=\"" + parameter + "\" rows=\"7\" cols=\"100\" >" + lastValue + "</textarea><br>\n");
       } else {
         page.append(parameter + "<input type=\"text\" name=\"" + parameter + "\" value=\"" + lastValue + "\"></input><br>\n");
       }
