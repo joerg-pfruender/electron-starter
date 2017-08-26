@@ -55,7 +55,7 @@ public class TemplatingTest {
     model.put("gruss", "");
     model.put("briefLang", "");
     final String result = Templating.generateFromTemplate(new File("."), "vereinsbrief.tex.ftl", model);
-    FileUtil.writeToFile(result, "vereinsbrief.tex");
+    new FileUtil().writeToFile(result, "vereinsbrief.tex");
 
     Runtime rt = Runtime.getRuntime();
     Process pr = rt.exec("pdflatex vereinsbrief.tex");
