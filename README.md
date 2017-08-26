@@ -1,13 +1,13 @@
-# Vereinsbrief #
-
-## Zur Installation
+# Vereinsbrief
 
 Electron Applikation zur Erstellung eines Geschäftsbriefs für einen Verein
 
 Basiert auf [JAVA TM](https://www.java.com/de/), [LaTeX](https://www.latex-project.org/) und [Electron](https://github.com/atom/electron)
 
 
-Vor der Installation von "Vereinsbrief" ist die Installation von Java und LaTex nötig:
+## Zur Installation
+
+Vor der Installation von "Vereinsbrief" ist die Installation von Java und LaTeX nötig:
 
 * [JAVA TM SE](https://java.com/de/download/)
 * [LaTeX](https://www.latex-project.org/get/)
