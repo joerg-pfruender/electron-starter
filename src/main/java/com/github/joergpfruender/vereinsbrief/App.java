@@ -160,11 +160,9 @@ public class App implements ErrorController {
 
       File pdfResult = new File(VEREINSBRIEF_PDF_FILENAME);
       for (int i = 0; i < 10; i++) {
-        try {
-          Thread.sleep(1000);
-        } catch (InterruptedException ignore) {
-        }
+        waitOneSecond();
         if (pdfResult.exists()) {
+          waitOneSecond(); // nochmal warten, bis die Datei hoffentlich ganz auf Platte geschrieben ist.
           break;
         }
       }
@@ -202,6 +200,13 @@ public class App implements ErrorController {
 
     }
 
+  }
+
+  private void waitOneSecond() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException ignore) {
+    }
   }
 
   private void copyResourceToWorkDirIfNecessary(String filename) throws IOException {

@@ -9,8 +9,9 @@
 %%
 %%
 %% Changes by Joerg Pfruender Copyright (C) 2017 LPPL www.latex-project.org/lppl.txt
+%% * changed 'g-brief2.cls' to 'g-vereinsbrief.cls' where necessary
 %% * added all lines containing "Vorstand"
-%% * added to line 401 : {\bf \nametext} \\
+%% * added to line 402 : {\bf \nametext} \\
 %%
 %% =======================================================================
 %% =======================================================================
@@ -53,7 +54,7 @@
 \def\fileversion{4.0.2}
 \def\filedate{2008/07/15}
 \def\fileversion{4.0.2}
-\def\filename{g-brief2.cls}
+\def\filename{g-vereinsbrief.cls}
 \NeedsTeXFormat{LaTeX2e}[2001/06/01]
 
 \ProvidesClass{g-brief2}[\filedate\space v\fileversion\space g-brief2 class]
@@ -483,4 +484,4 @@
 
 \endinput
 %%
-%% End of file `g-brief2.cls'.
+%% End of file `g-vereinsbrief.cls'.
