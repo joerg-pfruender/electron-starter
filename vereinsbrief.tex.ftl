@@ -19,7 +19,7 @@
 % Arbeitsunterbrechung, Computerausfall oder Betriebsstoerung
 % oder alle sonstigen wirtschaftlichen Schaeden oder Verluste).
 %
-\documentclass[12pt,ngerman]{g-briefverein}
+\documentclass[12pt,ngerman]{g-vereinsbrief}
 \usepackage[latin1]{inputenc}
 \usepackage[scaled]{helvet}
 \usepackage[T1]{fontenc}

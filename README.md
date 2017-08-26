@@ -1,6 +1,6 @@
 # Vereinsbrief #
 
-## Zur Benutzung
+## Zur Installation
 
 Electron Applikation zur Erstellung eines Geschäftsbriefs für einen Verein
 
@@ -25,10 +25,39 @@ Bei Bedarf müssen evtl. noch TeX-Pakete nachinstalliert werden:
 
 `tlmgr install adjustbox`
 
+## Zur Benutzung
 
-## Zur Entwicklung
+Wenn mal was nicht so aussieht, wie Du dachtest, schau mal bei LaTeX nach, wie man's formatieren soll:
+[https://wch.github.io/latexsheet/latexsheet.pdf](https://wch.github.io/latexsheet/latexsheet.pdf)
 
-Basiert auf Electron.
+Wichtige Sonderzeichen, die man escapen muss:
+
+* \ -> \\
+* $ -> \$
+* % -> \%
+* & -> \&
+* & -> \&
+
+Ich habe überlegt, diese immer zu ersetzen, aber dann bekommen die LaTeX-Profis wieder Probleme. Daher nicht.
+
+
+## Einfache Anpassungen
+
+Dieses Programm soll "hackbar" sein.
+
+### Die Datei `vereinsbrief.tex.ftl` kann an eigene Bedürfnisse angepasst werden.
+
+Platzhalter haben die Form `${mein_platzhalter}`.
+Wenn ein größeres Textfeld im Formular erscheinen soll, dann `${mein_platzhalterLang}`.
+
+### Die Datei `logo.eps` kann durch ein eigenes Logo für den Briefkopf rechts oben ersetzt werden.
+
+Wenn die Größe des Logos beibehalten wird, dann müssen auch keine Anpassungen in `vereinsbrief.tex.ftl` gemacht werden.   
+
+
+## Zur Weiterentwicklung
+
+Basiert auf [Electron](https://github.com/atom/electron).
 
 Es müssen vorhanden sein:
 * [Node.js](https://nodejs.org/en/download/current/)
@@ -46,7 +75,7 @@ Wichtige Befehle:
 
 Vielen Dank an:
 
-* an [Olle Törnström](https://github.com/olle) für die Vorlage von https://github.com/olle/electron-starter
+* an [Olle Törnström](https://github.com/olle) für die Vorlage von [https://github.com/olle/electron-starter](https://github.com/olle/electron-starter)
 * an Michael Lenzen für das LaTeX-Template
 * an [Benni und Jonas](http://be-jo.net/) für die gute g-brief-Vorlage
 * an die Macher von electron, LaTeX, Spring-Boot, Freemarker, Apache-Maven und alle anderen, auf denen das Projekt basiert.

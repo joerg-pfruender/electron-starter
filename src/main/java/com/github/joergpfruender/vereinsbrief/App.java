@@ -127,12 +127,17 @@ public class App {
       File pdfResult = new File(VEREINSBRIEF_PDF_FILENAME);
       if (pdfResult.exists()) {
         IOUtils.copy(new FileInputStream(pdfResult), outputStream);
-
-
         deleteFileIfExists(LASTVALUES_PROPERTIES_FILENAME);
         properties.store(new FileOutputStream(LASTVALUES_PROPERTIES_FILENAME), "lastProperties");
       } else {
-        System.err.println(LASTVALUES_PROPERTIES_FILENAME + "-Datei konnte nicht erstellt werden.");
+        outputStream.println("Datei konnte nicht erstellt werden:");
+
+        File logfile = new File(VEREINSBRIEF_LOG_FILENAME);
+
+        if (logfile.exists()) {
+          outputStream.println("LaTeX log: " + LN);
+          IOUtils.copy(new FileInputStream(logfile), outputStream);
+        }
       }
 
     } catch (Exception e) {
