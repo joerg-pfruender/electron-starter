@@ -67,8 +67,8 @@ Es müssen vorhanden sein:
 
 
 Wichtige Befehle:
-* `make`
 * `mvn package` Java bauen
+* `make`
 * `npm install` Electron-App bauen
 * `npm start`   Electron-App starten
 * `npm install electron-packager -g` Electron app zusammenpacken

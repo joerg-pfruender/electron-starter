@@ -1,6 +1,6 @@
 {
   "name": "Vereinsbrief",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Vereinsbrief-Ersteller - Electron app",
   "author": "Jörg Pfründer",
   "license": "APACHE",
