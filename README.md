@@ -9,11 +9,10 @@ Basiert auf [JAVA TM](https://www.java.com/de/), [LaTeX](https://www.latex-proje
 
 Vor der Installation von "Vereinsbrief" ist die Installation von Java und LaTeX nötig:
 
-* [JAVA TM SE](https://java.com/de/download/)
+* [JAVA TM SE](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 * [LaTeX](https://www.latex-project.org/get/)
 
-
-* [Anleitung für Windows](http://praxistipps.chip.de/latex-unter-windows-installieren-so-gehts_30111)
+* [TeX Live](https://www.tug.org/texlive/acquire-netinstall.html) Unter Windows getestet mit TeX Live, Achtung: Installation dauert sehr lange
 * Ubuntu-Linux: `sudo apt-get install texlive-latex-base texlive-latex-extra texlive-latex-recommended xzdec`
 
 Bei Bedarf müssen evtl. noch TeX-Pakete nachinstalliert werden:
@@ -62,7 +61,7 @@ Basiert auf [Electron](https://github.com/atom/electron).
 Es müssen vorhanden sein:
 * [Node.js](https://nodejs.org/en/download/current/)
 * [npm](https://www.npmjs.com/get-npm)
-* [JAVA TM SE JDK 8]()https://java.com/de/download/)
+* [JAVA TM SE JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Maven](https://maven.apache.org/)
 
 

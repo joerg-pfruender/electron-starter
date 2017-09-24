@@ -154,9 +154,7 @@ public class App implements ErrorController {
       final String tex = Templating.generateFromTemplate(templateBaseDir, TEMPLATE, templateModel);
       fileUtil.writeToFile(tex, VEREINSBRIEF_TEX_FILENAME);
 
-      Runtime rt = Runtime.getRuntime();
-      Process process = rt.exec("pdflatex " + VEREINSBRIEF_TEX_FILENAME);
-
+      new Executor().execute("pdflatex " + VEREINSBRIEF_TEX_FILENAME);
 
       File pdfResult = new File(VEREINSBRIEF_PDF_FILENAME);
       for (int i = 0; i < 10; i++) {
