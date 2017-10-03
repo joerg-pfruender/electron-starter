@@ -1,6 +1,6 @@
 package com.github.joergpfruender.vereinsbrief;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /*
@@ -18,9 +18,9 @@ import java.util.Map;
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-public class LatexUmlautReplace {
+public class LatexStringReplacer {
 
-  HashMap<String, String> replaceMap = new HashMap<String, String>() {
+  LinkedHashMap<String, String> replaceMap = new LinkedHashMap<String, String>() {
 
     {
       put("Ä", "{\\\"A}");
@@ -33,10 +33,15 @@ public class LatexUmlautReplace {
       put("\u00DF", "{\\ss}");
       put("€", "\\euro");
       put("é", "\\'e");
+      put(" & ", " \\& ");
+      put(" % ", " \\% ");
+      put(" $ ", " \\$ ");
+      put(System.lineSeparator(), "\\newline ");
+      put("\\newline \\newline ", System.lineSeparator() + "" + System.lineSeparator());
     }
   };
 
-  public String replaceUmlauts(String input) {
+  public String replaceSpecialCharacters(String input) {
     if (input == null || input.isEmpty()) {
       return input;
     }

@@ -51,7 +51,7 @@ public class App implements ErrorController {
   private static final String LASTVALUES_PROPERTIES_FILENAME = "lastvalues.properties";
   private static final String VEREINSBRIEF_LOG_FILENAME = "vereinsbrief.log";
 
-  private LatexUmlautReplace latexUmlautReplace = new LatexUmlautReplace();
+  private LatexStringReplacer latexStringReplacer = new LatexStringReplacer();
   private FileUtil fileUtil = new FileUtil();
 
   Logger logger = Logger.getLogger(App.class);
@@ -59,10 +59,24 @@ public class App implements ErrorController {
   @RequestMapping("/")
   @ResponseBody
   String fill() throws IOException {
-    final StringBuilder page = new StringBuilder("<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><title>F&uuml;lle aus</title></head><body><h1>Fülle die Werte aus, die im Brief erscheinen sollen</h1><br/>\n");
+    final StringBuilder page = new StringBuilder("<html>" +
+            "<head>\n" +
+            "  <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n" +
+            "  <title>F&uuml;lle aus</title>\n" +
+            "  <style>\n" +
+            "    * {\n" +
+            "      font-family: sans-serif;\n" +
+            "    }\n" +
+            "\n" +
+            "  </style>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "  <h1>Fülle die Werte aus, die im Brief erscheinen sollen</h1>\n" +
+            "  <br/>\n");
     try {
 
-      page.append("<form method=\"POST\" action=\"generate\"  accept-charset=\"UTF-8\">\n");
+      page.append("  <form method=\"POST\" action=\"generate\" accept-charset=\"UTF-8\" onSubmit=\"javscript:document.forms[0].submitButton.disabled=true;document.getElementsByName('waitMessage')[0].style.visibility = 'visible'\">\n" +
+              "    <table border=\"0\">\n");
       final List<String> parameters = StringRegex.getParameters(fileUtil.createResourceFileHandle(TEMPLATE));
 
       Properties properties = new Properties();
@@ -77,14 +91,21 @@ public class App implements ErrorController {
         }
 
         if (parameter.endsWith("Lang")) {
-          page.append(parameter + "<textarea name=\"" + parameter + "\" rows=\"7\" cols=\"100\" >" + lastValue + "</textarea><br>\n");
-        } else {
-          page.append(parameter + "<input type=\"text\" name=\"" + parameter + "\" value=\"" + lastValue + "\"></input><br>\n");
-        }
+          page.append("      <tr>\n" +
+                  "        <td>" + parameter + "</td>\n" +
+                  "        <td><textarea name=\"" + parameter + "\" rows=\"7\" cols=\"100\" >" + lastValue + "</textarea></td>\n" +
+                  "      </tr>\n");
+        } else page.append("      <tr>\n" +
+                "        <td>" + parameter + "</td>\n" +
+                "        <td><input type=\"text\" name=\"" + parameter + "\" value=\"" + lastValue + "\"></input></td>\n" +
+                "      </tr>\n");
       }
-      page.append("<input type=\"submit\">\n");
-
-      page.append("</body></html>\n");
+      page.append("  </table>\n");
+      page.append("  <input name=\"submitButton\" type=\"submit\">\n");
+      page.append("  <span style=\"visibility: hidden\" name=\"waitMessage\">Bitte warten...</span>\n");
+      page.append("  </form>\n");
+      page.append("</body>" +
+              "</html>\n");
 
     } catch (Exception e) {
       logger.error("Fehler waehrend der Erstellung des Briefs: ", e);
@@ -146,7 +167,7 @@ public class App implements ErrorController {
 
       Map<String, String> templateModel = new HashMap<String, String>();
       for (Map.Entry<String, String> entry : parameters.entrySet()) {
-        templateModel.put(entry.getKey(), latexUmlautReplace.replaceUmlauts(entry.getValue()));
+        templateModel.put(entry.getKey(), latexStringReplacer.replaceSpecialCharacters(entry.getValue()));
       }
 
       String resourcesRoot = fileUtil.getResourcesRoot();
