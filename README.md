@@ -7,7 +7,7 @@ Basiert auf [JAVA TM](https://www.java.com/de/), [LaTeX](https://www.latex-proje
 
 ## Zur Installation
 
-Vor der Installation von "Vereinsbrief" ist die Installation von Java und LaTeX nötig:
+Vor der Installation von "Vereinsbrief" ist die Installation von Java 8 und LaTeX nötig:
 
 * [JAVA TM SE](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 * [LaTeX](https://www.latex-project.org/get/)
@@ -71,7 +71,7 @@ Wichtige Befehle:
 * `npm install` Electron-App bauen
 * `npm start`   Electron-App starten
 * `electron-packager ./ Vereinsbrief --all` Electron apps erstellen
-* `tar -zcvf Vereinsbrief-linux-x64.tar.gz Vereinsbrief-linux-x6` tar.gz für Linux64 packen
+* `tar -zcvf Vereinsbrief-linux-x64.tar.gz Vereinsbrief-linux-x64` tar.gz für Linux64 packen
 
 Vielen Dank an:
 
